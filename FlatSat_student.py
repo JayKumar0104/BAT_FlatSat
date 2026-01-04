@@ -26,7 +26,7 @@ from git import Repo
 
 
 #VARIABLES
-THRESHOLD = 0      #Any desired value from the accelerometer
+THRESHOLD = 1      #Any desired value from the accelerometer
 REPO_PATH = "/home/bayareatinkerers/BAT_FlatSat"
 FOLDER_PATH = "Images"
 g=9.80665
@@ -75,7 +75,7 @@ def take_photo():
         accelx, accely, accelz = accel_gyro.acceleration
         a_mag = math.sqrt(accelx**2 + accely**2 + accelz**2)
 
-        if a_mag - g > THRESHOLD:
+        if a_mag > THRESHOLD:
             time.sleep(delay)
             now = datetime.now()
             name = now.strftime("%Y%m%d_%H%M%S")
@@ -100,6 +100,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
 
