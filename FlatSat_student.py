@@ -86,8 +86,8 @@ def take_photo():
             filename = img_gen(name)
             picam2.capture_file(filename)
             print("Saved:", filename)
+            print(formatted_string)
 
-print(formatted_string)
             
         #CHECKS IF READINGS ARE ABOVE THRESHOLD
             #PAUSE
@@ -104,4 +104,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
