@@ -27,8 +27,8 @@ from git import Repo
 
 #VARIABLES
 THRESHOLD = 0      #Any desired value from the accelerometer
-REPO_PATH = ""     #Your github repo path: ex. /home/pi/FlatSatChallenge
-FOLDER_PATH = ""   #Your image folder path in your GitHub repo: ex. /Images
+REPO_PATH = "/home/bayareatinkerers/BAT_FlatSat"
+FOLDER_PATH = "Images"
 g=9.80665
 delay=1
 
@@ -71,22 +71,18 @@ def img_gen(name):
 
 
 def take_photo():
-    """
-    This function is NOT complete. Takes a photo when the FlatSat is shaken.
-    Replace psuedocode with your own code.
-    """
     while True:
         accelx, accely, accelz = accel_gyro.acceleration
-        a_mag=math.sqrt(accelx*accelx+accely*accely+accelz*accelz)
+        a_mag = math.sqrt(accelx**2 + accely**2 + accelz**2)
+
         if a_mag - g > THRESHOLD:
             time.sleep(delay)
             now = datetime.now()
             name = now.strftime("%Y%m%d_%H%M%S")
-            #name = formatted_string
             filename = img_gen(name)
             picam2.capture_file(filename)
             print("Saved:", filename)
-            #print(formatted_string)
+            time.sleep(delay)
 
             
         #CHECKS IF READINGS ARE ABOVE THRESHOLD
@@ -104,6 +100,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
 
