@@ -82,11 +82,11 @@ def take_photo():
             time.sleep(delay)
             now = datetime.now()
             name = now.strftime("%Y%m%d_%H%M%S")
-            name = formatted_string
+            #name = formatted_string
             filename = img_gen(name)
             picam2.capture_file(filename)
             print("Saved:", filename)
-            print(formatted_string)
+            #print(formatted_string)
 
             
         #CHECKS IF READINGS ARE ABOVE THRESHOLD
@@ -104,5 +104,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
