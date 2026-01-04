@@ -78,7 +78,7 @@ def take_photo():
     while True:
         accelx, accely, accelz = accel_gyro.acceleration
         a_mag=math.sqrt(accelx*accelx+accely*accely+accelz*accelz)
-        if a_mag - g > threshold:
+        if a_mag - g > THRESHOLD:
             time.sleep(delay)
             now = datetime.now()
             name = now.strftime("%Y%m%d_%H%M%S")
@@ -104,6 +104,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
 
