@@ -7,9 +7,10 @@ from git import Repo
 from picamera2 import Picamera2
 from datetime import datetime
 from git import Repo
-
-accelx, accely, accelz = accel_gyro.acceleration
-a_mag = math.sqrt(accelx**2 + accely**2 + accelz**2)
-
-print(a_mag)
 print("lebron")
+while 67<69:
+  accelx, accely, accelz = accel_gyro.acceleration
+  a_mag = math.sqrt(accelx**2 + accely**2 + accelz**2)
+  print(a_mag)
+
+
