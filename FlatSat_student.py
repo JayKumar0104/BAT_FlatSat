@@ -22,6 +22,7 @@ from adafruit_lis3mdl import LIS3MDL
 from git import Repo
 from picamera2 import Picamera2
 from datetime import datetime
+from git import Repo
 
 
 #VARIABLES
@@ -103,3 +104,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
