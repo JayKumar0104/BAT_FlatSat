@@ -26,7 +26,7 @@ from git import Repo
 
 
 #VARIABLES
-THRESHOLD = 1      #Any desired value from the accelerometer
+THRESHOLD = 15      #Any desired value from the accelerometer
 REPO_PATH = "/home/bayareatinkerers/BAT_FlatSat"
 FOLDER_PATH = "Images"
 g=9.80665
@@ -100,6 +100,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
 
