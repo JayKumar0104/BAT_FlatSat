@@ -46,7 +46,7 @@ def take_photo():
     while True:
         ax, ay, az = accel_gyro.acceleration
         a_mag = math.sqrt(ax**2 + ay**2 + az**2)
-       if a_mag > THRESHOLD:
+        if a_mag > THRESHOLD:
            print("trigger detected")
            time.sleep(0.5)
            name = "BAT"
