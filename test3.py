@@ -6,7 +6,7 @@ from git import Repo
 from picamera2 import Picamera2
 import math
 #VARIABLES
-THRESHOLD = 12      #Any desired value from the accelerometer
+THRESHOLD = 10.5      #Any desired value from the accelerometer
 REPO_PATH = "/home/bayareatinkerers/BAT_FlatSat"
 FOLDER_PATH = "Images"
 #imu and camera initialization
@@ -47,14 +47,13 @@ def take_photo():
         ax, ay, az = accel_gyro.acceleration
         a_mag = math.sqrt(ax**2 + ay**2 + az**2)
        if a_mag > THRESHOLD:
-         print("trigger detected")
-         time.sleep(0.5)
-         name = "BAT"
-         filename = img_gen(name)
-         picam2.capture_file(filename)
-
-    print("Saved:", filename)
-    time.sleep(0.5)
+        print("trigger detected")
+        time.sleep(0.5)
+        name = "BAT"
+        filename = img_gen(name)
+        picam2.capture_file(filename)
+        print("Saved:", filename)
+        time.sleep(0.5)
 def main():
     take_photo()
 if __name__ == '__main__':
