@@ -47,13 +47,13 @@ def take_photo():
         ax, ay, az = accel_gyro.acceleration
         a_mag = math.sqrt(ax**2 + ay**2 + az**2)
        if a_mag > THRESHOLD:
-        print("trigger detected")
-        time.sleep(0.5)
-        name = "BAT"
-        filename = img_gen(name)
-        picam2.capture_file(filename)
-        print("Saved:", filename)
-        time.sleep(0.5)
+           print("trigger detected")
+           time.sleep(0.5)
+           name = "BAT"
+           filename = img_gen(name)
+           picam2.capture_file(filename)
+           print("Saved:", filename)
+           time.sleep(0.5)
 def main():
     take_photo()
 if __name__ == '__main__':
